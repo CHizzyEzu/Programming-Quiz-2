@@ -64,9 +64,9 @@ int main()
 
         int sum = 0;
         int count = 0;
-        int num = 0;
+        int num;
 
-        while (outputFile << num)
+        while (inputFile >> num)
         {
             sum += num;
             count++;
@@ -75,9 +75,18 @@ int main()
         inputFile.close();
 
         double average;
-        average = avg(sum, count);
 
-        cout << "Average: " << fixed << setprecision(2) << average << endl;
+        if(count != 0)
+        {
+            average = avg(sum, count);
+            cout << "Average: " << fixed << setprecision(2) << average << endl;
 
+        }
+        
+        else
+        {
+            cout << " No numbers found in file!" << endl;
+        }
+       
         return 0;
     }
